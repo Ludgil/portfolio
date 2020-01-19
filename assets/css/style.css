@@ -1,0 +1,345 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #181c22;
+}
+
+body #container {
+  width: 75%;
+  margin: 0 auto 0 auto;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  height: 10vh;
+}
+
+nav ul li {
+  position: relative;
+  list-style: none;
+  margin: auto 10px auto 10px;
+}
+
+nav ul li img {
+  margin: 0 25px 0 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: "Work Sans";
+  font-weight: 300;
+  font-size: 2rem;
+  color: #FF9F30;
+}
+
+nav ul li a:before {
+  position: absolute;
+  color: #fdfffc;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  content: attr(alt);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0;
+}
+
+nav ul li a:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+nav ul li a:hover:before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+header {
+  height: 90vh;
+  text-align: center;
+}
+
+header #header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80vh;
+}
+
+header #header-content h1 {
+  font-family: "Lobster";
+  color: #FF9F30;
+  font-size: 5rem;
+  margin-top: 0;
+}
+
+header #header-content h2 {
+  font-family: "Lobster";
+  color: #FF9F30;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+header #header-content img {
+  border-radius: 50%;
+  border: 5px solid #FF9F30;
+}
+
+.btn {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about {
+  height: 100vh;
+  text-align: center;
+}
+
+#about .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+}
+
+#about .flex #left-about {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about .flex #left-about h2 {
+  font-family: "Lobster";
+  font-size: 4rem;
+  color: #FF9F30;
+}
+
+#about .flex #right-about {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about .flex #right-about p {
+  font-family: "Work Sans";
+  font-size: 1.6rem;
+  color: #FF9F30;
+  font-weight: 300;
+}
+
+#work {
+  height: 100vh;
+  text-align: center;
+}
+
+#work #work-content {
+  height: 90vh;
+}
+
+#work #work-content h2 {
+  font-family: "Lobster";
+  font-size: 4rem;
+  color: #FF9F30;
+}
+
+#work #work-content #workcard {
+  height: 80%;
+  width: 100%;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#work #work-content #workcard .card {
+  width: 25%;
+  height: 50%;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+#work #work-content #workcard .card .infocard {
+  height: 50%;
+  width: 100%;
+  background-color: #181c22;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+#work #work-content #workcard .card .infocard h2 {
+  font-size: 1.8rem;
+}
+
+#work #work-content #workcard .card img {
+  width: 360px;
+  -webkit-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
+}
+
+#work #work-content #workcard .card:hover {
+  -webkit-animation: slidecard;
+          animation: slidecard;
+}
+
+#work #work-content #workcard .card:hover .infocard {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+#work #work-content #workcard .card:hover img {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
+#contact {
+  height: 100vh;
+  text-align: center;
+}
+
+#contact #contact-content {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#contact #contact-content #left-contact {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact #contact-content #right-contact {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact #contact-content #right-contact h2 {
+  font-family: "Lobster";
+  font-size: 4rem;
+  color: #FF9F30;
+}
+
+#contact #contact-content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#contact #contact-content form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact #contact-content form div input {
+  width: 400px;
+  height: 25px;
+  background-color: #25282e;
+  color: #FF9F30;
+  border: 0;
+  margin-bottom: 15px;
+}
+
+#contact #contact-content form div label {
+  font-family: "Work Sans";
+  font-size: 1rem;
+  color: #FF9F30;
+  margin-bottom: 15px;
+}
+
+#contact #contact-content form textarea {
+  background-color: #25282e;
+  border: 0;
+  width: 400px;
+  height: 150px;
+  color: #FF9F30;
+}
+/*# sourceMappingURL=style.css.map */

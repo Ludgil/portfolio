@@ -1,0 +1,261 @@
+$primary : #FF9F30;
+$secondary: #181c22;
+$try-primary:#011627;
+$try-secondary:#ff0022;
+$try-tree:#fdfffc;
+$teste: #373737;
+$font-primary:'Lobster';
+$font-secondary:'Work Sans';
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    margin: 0 auto;
+    background-color: $secondary;
+    #container{
+        width: 75%;
+        margin:0 auto 0 auto;
+    }
+}
+
+
+
+
+nav{
+    ul{ 
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto 0 auto;
+        padding: 0;
+        height: 10vh;
+        li{
+            position: relative;
+            list-style: none;
+            margin: auto 10px auto 10px;
+            img{
+                margin: 0 25px 0 25px;
+            }
+            a{
+                text-decoration: none;
+                font-family: $font-secondary;
+                font-weight: 300;
+                font-size:2rem;
+                color: $primary;
+                &:before{
+                    position: absolute;
+                    color: $try-tree;
+                    top: 0px;
+                    left: 0px;
+                    overflow: hidden;
+                    content: attr(alt);
+                    transition: all 0.3s;
+                    transform: scale(0.8);
+                    opacity: 0;
+                } 
+                &:before{
+                    transform: scale(1.2);
+                }
+                &:hover:before{
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+header{
+    height: 90vh;
+    text-align: center;
+    #header-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80vh;
+        h1{
+            font-family: $font-primary;
+            color: $primary;
+            font-size: 5rem;
+            margin-top: 0;
+        }
+        h2{
+            font-family: $font-primary;
+            color: $primary;
+            font-size: 3rem;
+            margin-top: 0;
+        }
+        img{
+            border-radius: 50%;
+            border: 5px solid $primary;
+        }
+    }
+
+}
+
+.btn{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about{
+    height: 100vh;
+    text-align: center;
+    .flex{
+        display: flex;
+        height: 90vh;
+        #left-about{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2{
+                font-family: $font-primary;
+                font-size: 4rem;
+               color: $primary;
+            }
+        }
+        #right-about{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                font-family: $font-secondary;
+                font-size: 1.6rem;
+                color: $primary;
+                font-weight: 300;
+            }
+        }
+    }
+   
+}
+
+#work{
+    height: 100vh;
+    text-align: center;
+    #work-content{
+        height: 90vh;
+        h2{
+            font-family: $font-primary;
+            font-size: 4rem;
+            color: $primary;
+        }
+        #workcard{
+            height: 80%;
+            width: 100%;
+            background-color: red;
+           display: flex;
+           flex-wrap: wrap;
+            .card{
+                width: 25%;
+                height: 50%;
+                background-color:white;
+                position: relative;
+                overflow: hidden;
+                .infocard{
+                    height: 50%;
+                    width: 100%;
+                    background-color:$secondary;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateY(200px);
+                    transition-duration: 0.5s; 
+                    transition-timing-function: ease-in;
+                    h2{
+                        font-size: 1.8rem;
+                    }
+                    a{
+
+                    }
+                }
+                img{
+                        width: 360px;
+                        transition: 0.6s ease-out;
+                }
+                
+                &:hover{
+                    animation: slidecard;
+                    .infocard{
+                       transform: translateY(0px);
+                    }
+                    img{
+                                transform: scale(110%);
+                                filter:blur(4px);
+                    }
+                    
+                    
+                }
+               
+               
+               
+            }
+        }
+    }
+}
+
+
+
+#contact{
+    height: 100vh;
+    text-align: center;
+    #contact-content{
+        height: 90vh;
+        display: flex;
+        #left-contact{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #right-contact{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2{
+                font-family: $font-primary;
+                font-size: 4rem;
+                color: $primary;
+            }
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                input{
+                    width: 400px;
+                    height: 25px;
+                    background-color: #25282e;
+                    color: $primary;
+                    border: 0;
+                    margin-bottom: 15px;
+                }
+                label{
+                    font-family: $font-secondary;
+                    font-size: 1rem;
+                    color: $primary;
+                    margin-bottom: 15px;
+                }
+            }
+            textarea{
+                background-color: #25282e;
+                border: 0;
+                width: 400px;
+                height: 150px;
+                color: $primary;
+            }
+        }
+    }
+}
