@@ -1,3 +1,15 @@
+<?php 
+    
+    session_start();
+
+    if(!isset($_SESSION['sent']) && !isset($_SESSION['error'])){
+        $_SESSION['sent'] = false;
+        $_SESSION['error']=false;
+    }
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -96,32 +108,64 @@
             </div>
         </section>
         <section id="contact">
-            <div id="contact-content">
-                <div id="right-contact">
-                    <h2>Contact</h2>
-                </div>
-                <div id="left-contact">
-                    <form action="getContact.php" method="POST">
-                        <div>
-                            <label for="firstname">FirstName :</label>
-                            <input type="text" name="firstname">
-                        </div>
-                        <div>
-                            <label for="lastname">LastName :</label>
-                            <input type="text" name="lastname">
-                        </div>
-                        <div>
-                            <label for="mail">Mail :</label>
-                            <input type="text" name="mail">
-                        </div>
-                        <div>
-                            <label for="message">Message :</label>
-                            <textarea name="message"></textarea>
-                        </div>
-                        <input type="submit">
-                    </form>
-                </div>
-            </div>
+        <?php if(!$_SESSION['sent']){
+           echo '<div id="contact-content">';
+           echo     '<div id="right-contact">';
+           echo         '<h2>Contact</h2>';
+           echo     '</div>';
+           echo     '<div id="left-contact">';
+           echo         '<form action="getContact.php" method="POST">';
+           echo             '<div>';
+           echo                 '<label for="firstname">FirstName :</label>';
+           echo                 '<input type="text" name="firstname">';
+           if(isset($_SESSION['firstnameError'])){
+               echo $_SESSION['firstnameError'];
+               unset($_SESSION['firstnameError']);
+           }
+           echo             '</div>';
+           echo             '<div>';
+           echo                 '<label for="lastname">LastName :</label>';
+           echo                 '<input type="text" name="lastname">';
+           if(isset($_SESSION['lastnameError'])){
+            echo $_SESSION['lastnameError'];
+            unset($_SESSION['lastnameError']);
+
+        }
+           echo             '</div>';
+           echo             '<div>';
+           echo                 '<label for="mail">Mail :</label>';
+           echo                 '<input type="text" name="mail">';
+           if(isset($_SESSION['mailError'])){
+            echo $_SESSION['mailError'];
+            unset($_SESSION['mailError']);
+        }
+           echo             '</div>';
+           echo             '<div>';
+           echo                 '<label for="message">Message :</label>';
+           echo                 '<textarea name="message"></textarea>';
+           if(isset($_SESSION['messageError'])){
+            echo $_SESSION['messageError'];
+            unset($_SESSION['messageError']);
+        }
+           echo             '</div>';
+           echo             '<input type="submit" name="submit">';
+           echo         '</form>';
+           echo     '</div>';
+           echo '</div>';
+        }else if($_SESSION['sent']){
+            echo '<div id="contact-content">';
+            echo     '<div id="right-contact">';
+            echo         '<h2>Contact</h2>';
+            echo     '</div>';
+            echo     '<div id="left-contact">';
+            echo        '<img src="" alt="sent">';
+            echo        '<h2>Sent</h2>';
+            echo     '</div>';
+            echo '</div>';
+        }else{
+            echo 'error';
+        }
+        ?>
             <div class='btn'>
                 <a href="#work"><img src="assets/img/arrow-up.png" alt="bouton up"></a>
             </div>
