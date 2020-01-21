@@ -36,7 +36,7 @@
         <header>
             <div id="header-content">
                 <h1>Gilotaux Ludivic</h1>
-                <h2>Junior Developper</h2>
+                <h2>Junior Web Developper</h2>
                 <img src="assets/img/petitephoto.jpg" alt="photo">
             </div>
             <div class='btn'>
@@ -49,9 +49,7 @@
                     <h2>About Me</h2>
                 </div>
                 <div id=right-about>
-                    <p>Young Web developper, looking for an internship rather in back-end PHP. 
-                        I worked for 2 years in a bank but i'm passionate with technologies since my childhood and 
-                        i really want work in a domain that i find attractive.
+                    <p>I'm passionate with technologies since my childhood
                     </p>
                 </div>
             </div>
@@ -68,7 +66,7 @@
                         <img src="assets/img/photo.jpg" alt="">
                         <div class="infocard">
                             <h2>title</h2>
-                            <a alt="link" href="#">Link</a>
+                            <a alt="link" href="pageWork.php?index=0">Link</a>
                         </div>
                     </div>
                     <div class="card">
@@ -117,7 +115,12 @@
            echo         '<form action="getContact.php" method="POST">';
            echo             '<div>';
            echo                 '<label for="firstname">FirstName :</label>';
-           echo                 '<input type="text" name="firstname">';
+           echo                 '<input type="text" name="firstname"';
+           if(isset($_SESSION['firstname'])){ 
+               echo 'value="'.$_SESSION['firstname'];
+               unset($_SESSION['firstname']);
+            }
+               echo '">';
            if(isset($_SESSION['firstnameError'])){
                echo $_SESSION['firstnameError'];
                unset($_SESSION['firstnameError']);
@@ -125,7 +128,12 @@
            echo             '</div>';
            echo             '<div>';
            echo                 '<label for="lastname">LastName :</label>';
-           echo                 '<input type="text" name="lastname">';
+           echo                 '<input type="text" name="lastname"';
+           if(isset($_SESSION['lastname'])){ 
+            echo 'value="'.$_SESSION['lastname'];
+            unset($_SESSION['lastname']);
+         }
+            echo '">';
            if(isset($_SESSION['lastnameError'])){
             echo $_SESSION['lastnameError'];
             unset($_SESSION['lastnameError']);
@@ -134,7 +142,12 @@
            echo             '</div>';
            echo             '<div>';
            echo                 '<label for="mail">Mail :</label>';
-           echo                 '<input type="text" name="mail">';
+           echo                 '<input type="text" name="mail"';
+           if(isset($_SESSION['mail'])){ 
+            echo 'value="'.$_SESSION['mail'];
+            unset($_SESSION['mail']);
+         }
+            echo '">';
            if(isset($_SESSION['mailError'])){
             echo $_SESSION['mailError'];
             unset($_SESSION['mailError']);
@@ -142,7 +155,12 @@
            echo             '</div>';
            echo             '<div>';
            echo                 '<label for="message">Message :</label>';
-           echo                 '<textarea name="message"></textarea>';
+           echo                 '<textarea name="message">';
+           if(isset($_SESSION['message'])){ 
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+         }
+            echo '</textarea>';
            if(isset($_SESSION['messageError'])){
             echo $_SESSION['messageError'];
             unset($_SESSION['messageError']);

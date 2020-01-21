@@ -30,28 +30,51 @@
         echo '</br>';
         var_dump($filterPostArray['mail']);
 
-        if(!preg_match("/^[A-Za-z .'-]+$/", $filterPostArray['firstname'])){
-            $_SESSION['firstnameError'] = 'il ne faut pas de chiffre';
+        if(!preg_match("/^[A-Za-z .'-]+$/", $filterPostArray['firstname']) || strlen($filterPostArray['firstname']) > 250 ){
+            $_SESSION['firstnameError'] = '<p>il ne faut pas de chiffres</p>';
         }
-        if(!preg_match("/^[A-Za-z .'-]+$/", $filterPostArray['lastname'])){
-            $_SESSION['lastnameError']= 'il ne faut pas de chiffre';
+        if(!preg_match("/^[A-Za-z .'-]+$/", $filterPostArray['lastname']) || strlen($filterPostArray['lastname']) > 250 ){
+            $_SESSION['lastnameError']= '<p>il ne faut pas de chiffres</p>';
         }
-        if(!filter_var($filterPostArray['mail'], FILTER_VALIDATE_EMAIL)){
-            $_SESSION['mailError']='mail invalide';
+        if(!filter_var($filterPostArray['mail'], FILTER_VALIDATE_EMAIL) || strlen($filterPostArray['mail']) > 200 ){
+            $_SESSION['mailError']='<p>le mail invalide</p>';
         }
         if(strlen($filterPostArray['message']) === 0 || strlen($filterPostArray['message']) > 1500 ){
-            $_SESSION['messageError'] = 'Your message should not be empty';
+            $_SESSION['messageError'] = '<p>Le message ne peut pas être vide</p>';
         } 
+
+        if(!isset($_SESSION['firstnameError'])){
+            
+            $_SESSION['firstname']=$filterPostArray['firstname'];
+        }
+
+        if(!isset($_SESSION['lastnameError'])){
+            
+            $_SESSION['lastname']=$filterPostArray['lastname'];
+        }
+
+        if(!isset($_SESSION['mailError'])){
+            
+            $_SESSION['mail']=$filterPostArray['mail'];
+        }
+
+        if(!isset($_SESSION['messageError'])){
+            
+            $_SESSION['message']=$filterPostArray['message'];
+        }
+
+
+        
+        if(isset($_SESSION['firstnameError']) || isset($_SESSION['lastnameError']) || isset($_SESSION['mailError']) || isset($_SESSION['messageError']) ){
+    
+            $_SESSION['sent']=false;
+            header('Location: index.php#contact');
+        }else{
+            $_SESSION['sent']=true;
+            header('Location: index.php#contact');
+        }
     }
 
-    if(isset($_SESSION['firstnameError']) || isset($_SESSION['lastnameError']) || isset($_SESSION['mailError']) || isset($_SESSION['messageError']) ){
-
-        $_SESSION['sent']=false;
-        header('Location: index.php#contact');
-    }else{
-        $_SESSION['sent']=true;
-        header('Location: index.php#contact');
-    }
     
 
 ?>

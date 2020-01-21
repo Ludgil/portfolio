@@ -149,7 +149,7 @@ header #header-content img {
 
 #about .flex #left-about h2 {
   font-family: "Lobster";
-  font-size: 4rem;
+  font-size: 8rem;
   color: #FF9F30;
 }
 
@@ -289,7 +289,7 @@ header #header-content img {
 
 #contact #contact-content #right-contact h2 {
   font-family: "Lobster";
-  font-size: 4rem;
+  font-size: 8rem;
   color: #FF9F30;
 }
 
@@ -341,5 +341,74 @@ header #header-content img {
   width: 400px;
   height: 150px;
   color: #FF9F30;
+}
+
+#previewWork {
+  height: 100vh;
+  text-align: center;
+}
+
+#previewWork #titleWork {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 10vh;
+}
+
+#previewWork #titleWork h1 {
+  font-family: "Lobster";
+  font-size: 3.6rem;
+  color: "Work Sans";
+  margin: 0;
+}
+
+#previewWork .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+}
+
+#previewWork .flex #miniature-work {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#previewWork .flex #description-work {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#previewWork .flex #description-work p {
+  font-family: "Work Sans";
+  font-size: 1.6rem;
+  color: #FF9F30;
+  font-weight: 300;
 }
 /*# sourceMappingURL=style.css.map */

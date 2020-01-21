@@ -117,7 +117,7 @@ header{
             align-items: center;
             h2{
                 font-family: $font-primary;
-                font-size: 4rem;
+                font-size: 8rem;
                color: $primary;
             }
         }
@@ -222,7 +222,7 @@ header{
             align-items: center;
             h2{
                 font-family: $font-primary;
-                font-size: 4rem;
+                font-size: 8rem;
                 color: $primary;
             }
         }
@@ -258,4 +258,51 @@ header{
             }
         }
     }
+}
+
+
+
+
+
+
+#previewWork{
+    height: 100vh;
+    text-align: center;
+    #titleWork{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        h1{
+            font-family: $font-primary;
+            font-size: 3.6rem;
+            color: $font-secondary;
+            margin: 0;
+        }
+    }
+    .flex{
+        display: flex;
+        height: 90vh;
+        #miniature-work{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        #description-work{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            p{
+                font-family: $font-secondary;
+                font-size: 1.6rem;
+                color: $primary;
+                font-weight: 300;
+            }
+        }
+    }
+   
 }
